@@ -4,7 +4,7 @@ public class Shop
 {
     public required string ShopName {get; init;}
 
-    private List<Item> Inventory {get; set;} = [];
+    public List<Item> Inventory {get; set;} = [];
 
     public readonly List<Customer> _customers = [];
 
@@ -95,7 +95,7 @@ public class Shop
             Console.WriteLine($"You've ordered more {Inventory[index].Name}. The quantity is now {Inventory[index].Quantity}");
         }
     }
-    private int FindItemIndex(string itemName)
+    public int FindItemIndex(string itemName)
     {
         int index = Inventory.FindIndex(item => item.Name == itemName);
         return index;
